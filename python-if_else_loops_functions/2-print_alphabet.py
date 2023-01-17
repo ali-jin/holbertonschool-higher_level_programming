@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-import string
 
-print(string.ascii_lowercase)
+for c in range(ord('a'), ord('z')):
+    print("{c}".format(c=chr(c)), end="")
