@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 def uppercase(str):
     up = 0
     ch = ""
