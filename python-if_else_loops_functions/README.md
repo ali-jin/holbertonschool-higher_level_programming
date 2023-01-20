@@ -105,6 +105,10 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 - You are not allowed to store characters in a variable
 - You are not allowed to import any module
 - File: `2-print_alphabet.py`
+```
+guillaume@ubuntu:~/$ ./2-print_alphabet.py
+abcdefghijklmnopqrstuvwxyzguillaume@ubuntu:~/$
+```
 
 -------------------------
 ### 3. When I was having that alphabet soup, I never thought that it would pay off
@@ -115,6 +119,10 @@ Write a program that prints the ASCII alphabet, in lowercase, not followed by a 
 - You are not allowed to store characters in a variable
 - You are not allowed to import any module
 - File: `3-print_alphabt.py`
+```
+guillaume@ubuntu:~/$ ./3-print_alphabt.py
+abcdfghijklmnoprstuvwxyzguillaume@ubuntu:~/$
+```
 
 -------------------------
 ### 4. Hexadecimal printing
@@ -124,6 +132,33 @@ Write a program that prints all numbers from `0` to `98` in decimal and in hexad
 - You are not allowed to store numbers or strings in a variable
 - You are not allowed to import any module
 - File: `4-print_hexa.py`
+```
+guillaume@ubuntu:~/$ ./4-print_hexa.py
+0 = 0x0
+1 = 0x1
+2 = 0x2
+3 = 0x3
+4 = 0x4
+5 = 0x5
+6 = 0x6
+7 = 0x7
+8 = 0x8
+9 = 0x9
+10 = 0xa
+11 = 0xb
+12 = 0xc
+13 = 0xd
+14 = 0xe
+15 = 0xf
+16 = 0x10
+17 = 0x11
+18 = 0x12
+...
+96 = 0x60
+97 = 0x61
+98 = 0x62
+guillaume@ubuntu:~/$
+```
 
 -------------------------
 ### 5. 00...99
@@ -136,6 +171,11 @@ Write a program that prints numbers from `0` to `99`.
 - You are not allowed to store numbers or strings in a variable
 - You are not allowed to import any module
 - File: `5-print_comb2.py`
+```
+guillaume@ubuntu:~/$ ./5-print_comb2.py
+00, 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99
+guillaume@ubuntu:~/$
+```
 
 -------------------------
 ### 6. Inventing is a combination of brains and materials. The more brains you use, the less material you need
@@ -151,6 +191,11 @@ Write a program that prints all possible different combinations of two digits.
 - You are not allowed to store numbers or strings in a variable
 - You are not allowed to import any module
 - File: `6-print_comb3.py`
+```
+guillaume@ubuntu:~/$ ./6-print_comb3.py
+01, 02, 03, 04, 05, 06, 07, 08, 09, 12, 13, 14, 15, 16, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 34, 35, 36, 37, 38, 39, 45, 46, 47, 48, 49, 56, 57, 58, 59, 67, 68, 69, 78, 79, 89
+guillaume@ubuntu:~/$ 
+```
 
 -------------------------
 ### 7. islower
