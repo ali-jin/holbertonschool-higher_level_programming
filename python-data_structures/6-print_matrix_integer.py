@@ -12,4 +12,4 @@ def print_matrix_integer(matrix=[[]]):
                 if row.index(List) == len(row) - 1:
                     print("")
     if (matrix == [[]]):
-        print(" ")
+        print("")
