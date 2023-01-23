@@ -11,5 +11,5 @@ def print_matrix_integer(matrix=[[]]):
                     print(" ", end="")
                 if row.index(List) == len(row) - 1:
                     print("")
-    else:
+    if (matrix == [[]]):
         print(" ")
