@@ -33,7 +33,7 @@ class Square:
     def my_print(self):
         """Print the square"""
         if self.__size == 0:
-            print("\n")
+            print("")
         for row in range(self.__size):
             for col in range(self.__size):
                 print("#", end="")
