@@ -23,10 +23,8 @@ Tests to realize:
                 ...
     TypeError: b must be an integer
 
-    >>> add_integer('world', 6)
-    Traceback (most recent call last):
-                ...
-    TypeError: a must be an integer
+    >>> add_integer(6)
+    104
 
     >>> add_integer(25.5, 58.2)
     83
