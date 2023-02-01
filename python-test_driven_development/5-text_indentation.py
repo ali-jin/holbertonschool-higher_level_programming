@@ -13,13 +13,13 @@ def text_indentation(text):
     for i in range(len(text)):
         if line == "" and text[i] == " ":
             pass
-        elif text[i] in list_char:
-            line += text[i]
-            print(line, end="\n\n")
-            line = ""
         elif i == len(text) - 1:
             line += text[i]
             print(line)
+            line = ""
+        elif text[i] in list_char:
+            line += text[i]
+            print(line, end="\n\n")
             line = ""
         else:
             line += text[i]
