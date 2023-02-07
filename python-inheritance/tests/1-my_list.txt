@@ -60,4 +60,4 @@ Tests to realize:
     >>> my_list.print_sorted()
     [1, 2, 4]
     >>> print(my_list)
-    [1, 2, 4]
+    [1, 4, 2]
