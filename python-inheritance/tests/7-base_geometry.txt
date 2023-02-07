@@ -33,6 +33,7 @@ Tests to realize:
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("age", 1)
+    1
 
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("age", -4)
