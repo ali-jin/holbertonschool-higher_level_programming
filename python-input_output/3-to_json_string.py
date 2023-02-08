@@ -10,4 +10,6 @@ def to_json_string(my_obj):
     Args:
         my_obj (str): The string to transform
     """
-    print(json.dumps(my_obj))
+    json_string = json.dumps(my_obj)
+    print(json_string)
+    print(type(json_string))
