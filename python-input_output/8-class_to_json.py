@@ -2,7 +2,6 @@
 """Module that returns the dictionary
 description with simple data structure
 """
-import json
 
 
 def class_to_json(obj):
@@ -12,5 +11,4 @@ def class_to_json(obj):
     Args:
         obj : An instance of a class
     """
-    res = json.dumps(obj, default=lambda o: o.__dict__)
-    return json.loads(res)
+    return obj.__dict__
