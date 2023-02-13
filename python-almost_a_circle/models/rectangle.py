@@ -76,3 +76,11 @@ class Rectangle(Base):
         """Print the rectangle"""
         for i in range(self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        id = self.id
+        width = self.__width
+        height = self.__height
+        x = self.__x
+        y = self.__y
+        return '[Rectangle] (%s) %s/%s - %s/%s' % (id, x, y, width, height)
