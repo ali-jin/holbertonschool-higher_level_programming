@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that contains class Base"""
 import json
+from os import path
 
 
 class Base:
@@ -59,3 +60,18 @@ class Base:
             cls1 = cls(56, 8)
         cls1.update(**dictionary)
         return cls1
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        if not path.isfile(filename):
+            return []
+        else:
+            with open(filename, 'r') as f:
+                lines = f.read()
+                Mydictionary = cls.from_json_string(lines)
+                instance = []
+                for obj in Mydictionary:
+                    instance.append(cls.create(**obj))
+                return instance
