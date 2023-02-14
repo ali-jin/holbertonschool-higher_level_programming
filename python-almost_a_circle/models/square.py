@@ -8,11 +8,7 @@ Rectangle = __import__('models').Rectangle
 class Square(Rectangle):
     """Class Square that inherits from Rectangle"""
     def __init__(self, size, x=0, y=0, id=None):
-        self.size = size
-        self.x = x
-        self.y = y
-        self.id = id
-        Rectangle.__init__(self, size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
@@ -44,3 +40,19 @@ class Square(Rectangle):
         x = self.x
         y = self.y
         return '[Square] (%s) %s/%s - %s' % (id, x, y, size)
+
+    def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            elif len(args) >= 2:
+                self.size = args[1]
+            elif len(args) >= 3:
+                self.x = args[2]
+            else:
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
