@@ -88,7 +88,8 @@ class Rectangle(Base):
         return '[Rectangle] (%s) %s/%s - %s/%s' % (id, x, y, width, height)
 
     def update(self, *args):
-
+        """Assigns an argument to each attribute
+        """
         if len(args) == 1:
             self.id = args[0]
         elif len(args) == 2:
