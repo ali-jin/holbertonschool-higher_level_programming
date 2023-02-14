@@ -39,3 +39,10 @@ class Base:
                 myDict.append(obj.to_dictionary())
             with open(f"{cls.__name__}.json", 'w') as f:
                 f.write(cls.to_json_string(myDict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns the list of the JSON string
+        representation json_string
+        """
+        return json.loads(json_string)
