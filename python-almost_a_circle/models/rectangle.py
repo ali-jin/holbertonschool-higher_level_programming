@@ -87,16 +87,20 @@ class Rectangle(Base):
         y = self.__y
         return '[Rectangle] (%s) %s/%s - %s/%s' % (id, x, y, width, height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute
         """
-        if len(args) == 1:
-            self.id = args[0]
-        elif len(args) == 2:
-            self.width = args[1]
-        elif len(args) == 3:
-            self.height = args[2]
-        elif len(args) == 4:
-            self.x = args[3]
+        if len(args) > 0:
+            if len(args) == 1:
+                self.id = args[0]
+            elif len(args) == 2:
+                self.width = args[1]
+            elif len(args) == 3:
+                self.height = args[2]
+            elif len(args) == 4:
+                self.x = args[3]
+            else:
+                self.y = args[4]
         else:
-            self.y = args[4]
+            for key, value in kwargs.items():
+                setattr(self, key, value)
