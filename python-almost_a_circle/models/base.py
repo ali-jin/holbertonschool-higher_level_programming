@@ -21,7 +21,7 @@ class Base:
            of list_dictionaries
         """
         if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
+            return []
         else:
             return json.dumps(list_dictionaries)
 
@@ -46,6 +46,6 @@ class Base:
         representation json_string
         """
         if json_string is None or json_string == []:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
