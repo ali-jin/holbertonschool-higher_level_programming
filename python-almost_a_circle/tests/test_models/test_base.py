@@ -6,11 +6,10 @@ from models.base import Base
 
 class TestBase(unittest.TestCase,):
     @classmethod
-    def setUpClass(self, class_name=Base, **kwargs):
-        self._class_name = class_name
+    def setUpClass(cls, class_name=Base, **kwargs):
+        cls._class_name = class_name
 
     def TestInstance(self):
-        Base.__nb_objects = 0
         init_id = self._class_name().id
         first_obj = self._class_name()
         second_obj = self._class_name()
