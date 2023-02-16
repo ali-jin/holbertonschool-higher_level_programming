@@ -2,8 +2,7 @@
 """Module that contains class Rectangle that
    inherits from Base
 """
-Base = __import__('models').Base
-
+from models.base import Base
 
 class Rectangle(Base):
     """Class Rectangle that inherits from Base
