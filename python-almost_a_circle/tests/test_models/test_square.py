@@ -2,13 +2,11 @@
 """Unittest for class Square
 """
 from models.square import Square
-from models.rectangle import Rectangle
-from models.base import Base
-import unittest
+from .test_rectangle import TestRectangle
 
-class Testsquare(unittest.TestCase):
-    def test_no_arg(self):
-        b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id, b2.id - 1)
-
+class Testsquare(TestRectangle):
+    @classmethod
+    def setUpClass(cls, class_name=Square, **kwargs):
+        defaultKwargs = { 'size': 10 }
+        kwargs = defaultKwargs if kwargs == {} else kwargs
+        return super().setUpClass(class_name, **kwargs)

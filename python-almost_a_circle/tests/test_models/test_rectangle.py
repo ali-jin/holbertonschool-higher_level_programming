@@ -7,5 +7,7 @@ from models.rectangle import Rectangle
 
 class TestRectangle(TestBase):
     @classmethod
-    def setUpClass(self, class_name=Rectangle):
-        return super().setUpClass(class_name)
+    def setUpClass(cls, class_name=Rectangle, **kwargs):
+        defaultKwargs = { 'width': 10, 'height': 20 }
+        kwargs = defaultKwargs if kwargs == {} else kwargs
+        return super().setUpClass(class_name, **kwargs)
