@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Unittest for class Square
 """
 import unittest
@@ -25,9 +26,9 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square("1")
         with self.assertRaises(TypeError):
-            Square(1, "2")
+            Square(1, "2")# type: ignore
         with self.assertRaises(TypeError):
-            Square(1, 2, "3")
+            Square(1, 2, "3")# type: ignore
 
     def test_negative_size(self):
         """Test creation of a square with negative size"""
