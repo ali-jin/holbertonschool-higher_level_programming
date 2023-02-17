@@ -8,6 +8,7 @@ from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
+    
 
     def test_to_dictionary(self):
         """Test the to_dictionary method of the Square class"""

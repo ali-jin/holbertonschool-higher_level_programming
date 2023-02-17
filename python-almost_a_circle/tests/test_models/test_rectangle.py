@@ -46,6 +46,18 @@ class test_rectangle(unittest.TestCase):
         new = Rectangle(1, 1)
         self.assertEqual(True, isinstance(new, Base))
 
+    def test_rectangle_instance(self):
+        """Test if rectangle instance is created successfully"""
+        rect = Rectangle(1, 2)
+        self.assertIsInstance(rect, Base)
+        self.assertIsInstance(rect, Rectangle)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 0)
+        self.assertEqual(rect.y, 0)
+        self.assertEqual(rect.id, rect._Base__nb_objects)
+
+
     def test_rectangle_str_width(self):
         """Test that passing a string as width raises a TypeError"""
         with self.assertRaises(TypeError):
