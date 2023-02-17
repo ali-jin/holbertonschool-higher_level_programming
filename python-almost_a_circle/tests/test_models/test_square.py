@@ -1,10 +1,9 @@
-#!/usr/bin/python3
 """Unittest for class Square
 """
 import unittest
-from models.square import Square
 import os
 import json
+from models.square import Square
 
 
 class TestSquare(unittest.TestCase):
@@ -53,6 +52,13 @@ class TestSquare(unittest.TestCase):
         square.update(id=4)
         self.assertEqual(square.id, 4)
 
+    def test_create(self):
+        """Test Square create method"""
+        square = Square(10, 9, 8, 6)
+        r_dictionary = square.to_dictionary()
+        second_square = square.create(**r_dictionary)
+        self.assertEqual(second_square.id, 6)
+
     def test_save_to_file_None(self):
         """Test square save_to_file method with None as argument"""
         Square.save_to_file(None)
@@ -76,15 +82,8 @@ class TestSquare(unittest.TestCase):
             ls = [square1.to_dictionary(), square2.to_dictionary()]
             self.assertEqual(json.dumps(ls), file.read())
 
-    def test_load_from_file_no_file(self):
-        """Test Square load_from_file method when file doesn't exist"""
+    def test_load_from_file_when_file_doesnt_exist(self):
+        """Test Square load_from_file method"""
         if os.path.exists("Square.json"):
             os.remove("Square.json")
         self.assertEqual(Square.load_from_file(), [])
-
-    def test_create(self):
-        """Test Square create method"""
-        square = Square(10, 9, 8, 6)
-        r_dictionary = square.to_dictionary()
-        second_square = square.create(**r_dictionary)
-        self.assertEqual(second_square.id, 6)

@@ -1,13 +1,12 @@
-#!/usr/bin/python3
 """Unittest for class Rectangle
 """
 import unittest
+import os
 import json
 from io import StringIO
 from contextlib import redirect_stdout
 from models.rectangle import Rectangle
 from models.base import Base
-import os
 
 
 class test_rectangle(unittest.TestCase):
@@ -21,7 +20,7 @@ class test_rectangle(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 0)
         self.assertEqual(rect.y, 0)
-        self.assertEqual(rect.id, rect._Base__nb_objects)
+        self.assertEqual(rect.id, rect.__nb_objects)
 
     def test_rectangle_str_width(self):
         """Test that passing a string as width raises a TypeError"""
@@ -124,6 +123,7 @@ class test_rectangle(unittest.TestCase):
         self.assertEqual(str(r), "[Rectangle] (89) 4/5 - 2/3")
 
     def test_create(self):
+        """Test Rectangle.create() method"""
         rect = Rectangle(10, 9, 8, 7, 6)
         rect_dictionary = rect.to_dictionary()
         second_rect = Rectangle.create(**rect_dictionary)
@@ -153,7 +153,7 @@ class test_rectangle(unittest.TestCase):
             self.assertEqual(json.dumps(ls), file.read())
 
     def test_load_from_file_no_file(self):
-        """Test Rectangle load_from_file method when file doesn't exist"""
+        """Test Rectangle load_from_file method"""
         if os.path.exists("Rectangle.json"):
             os.remove("Rectangle.json")
         self.assertEqual(Rectangle.load_from_file(), [])
