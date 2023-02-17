@@ -22,7 +22,7 @@ class Base:
            of list_dictionaries
         """
         if list_dictionaries is None or list_dictionaries == []:
-            return []
+            return json.dumps([])
         else:
             return json.dumps(list_dictionaries)
 
@@ -53,13 +53,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-
-        if cls.__name__ == "Square":
-            cls1 = cls(15)
+        if cls.__name__ == "Rectangle":
+            instance = cls(1, 4)
         else:
-            cls1 = cls(56, 8)
-        cls1.update(**dictionary)
-        return cls1
+            instance = cls(1)
+
+        instance.update(**dictionary)
+        return instance
 
     @classmethod
     def load_from_file(cls):

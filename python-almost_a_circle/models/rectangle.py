@@ -9,11 +9,11 @@ class Rectangle(Base):
     """Class Rectangle that inherits from Base
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
-        Base.__init__(self, id)
 
     @property
     def width(self):
@@ -89,20 +89,23 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute
         """
-        if len(args) > 0:
-            if len(args) == 1:
-                self.id = args[0]
-            elif len(args) == 2:
-                self.width = args[1]
-            elif len(args) == 3:
-                self.height = args[2]
-            elif len(args) == 4:
-                self.x = args[3]
-            else:
-                self.y = args[4]
+        i = 0
+        if args:
+            for arg in args:
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.width = arg
+                if i == 2:
+                    self.height = arg
+                if i == 3:
+                    self.x = arg
+                if i == 4:
+                    self.y = arg
+                i += 1
         else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+            for arg in kwargs:
+                setattr(self, arg, kwargs.get(arg))
 
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle
