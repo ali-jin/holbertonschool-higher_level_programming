@@ -2,7 +2,7 @@
 """Module that contains the class Square
    that inherits from Rectangle
 """
-Rectangle = __import__('models').Rectangle
+from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
