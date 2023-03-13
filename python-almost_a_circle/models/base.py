@@ -54,11 +54,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if cls.__name__ == "Rectangle":
-            instance = cls(1, 4)
+            instance = cls(1, 4)# type: ignore
         else:
             instance = cls(1)
 
-        instance.update(**dictionary)
+        instance.update(**dictionary)# type: ignore
         return instance
 
     @classmethod
