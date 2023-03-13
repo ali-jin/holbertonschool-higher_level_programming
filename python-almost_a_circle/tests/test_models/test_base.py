@@ -8,7 +8,7 @@ class test_base(unittest.TestCase):
 
     def setUp(self):
         """ Method invoked for each test """
-        Base._Base__nb_objects = 0
+        Base._Base__nb_objects = 0# type: ignore
 
     def test_id(self):
         """ Test assigned id """
@@ -46,7 +46,7 @@ class test_base(unittest.TestCase):
     def test_more_args_id(self):
         """ Test passing more args to init method """
         with self.assertRaises(TypeError):
-            new = Base(1, 1)
+            new = Base(1, 1)# type: ignore
 
     def test_to_json_string(self):
         """Test to_json_string method with None argument"""

@@ -14,7 +14,7 @@ class test_rectangle(unittest.TestCase):
 
     def setUp(self):
         """ Method invoked for each test """
-        Base._Base__nb_objects = 0
+        Base._Base__nb_objects = 0# type: ignore
 
     def test_new_rectangle(self):
         """ Test new rectangle """
@@ -55,7 +55,7 @@ class test_rectangle(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 0)
         self.assertEqual(rect.y, 0)
-        self.assertEqual(rect.id, rect._Base__nb_objects)
+        self.assertEqual(rect.id, rect._Base__nb_objects)# type: ignore
 
 
     def test_rectangle_str_width(self):
