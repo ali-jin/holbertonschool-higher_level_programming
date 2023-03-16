@@ -9,7 +9,7 @@ if __name__ == '__main__':
                          passwd=sys.argv[2], db=sys.argv[3])
     cursor = db.cursor()
     cursor.execute("SELECT cities.id, cities.name, states.name \
-        FROM cities RIGHT JOIN states ON states.id = cities.state_id\
+        FROM cities INNER JOIN states ON states.id = cities.state_id\
         ORDER BY cities.id;")
     result = cursor.fetchall()
 
