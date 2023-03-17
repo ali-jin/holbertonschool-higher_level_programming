@@ -14,5 +14,7 @@ if __name__ == '__main__':
     session = Session(engine)
 
     row = session.query(State).first()
+    if row is None:
+        print("Nothing")
     print(row.id, end="")
     print(": " + row.name)
