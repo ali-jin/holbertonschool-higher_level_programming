@@ -17,5 +17,5 @@ if __name__ == '__main__':
     row = session.query(State).filter(State.name == argv[4]).first()
     try:
         print(row.id)
-    except:
+    except AttributeError:
         print("Not found")
