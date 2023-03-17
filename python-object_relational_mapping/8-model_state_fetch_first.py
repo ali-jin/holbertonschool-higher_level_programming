@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""script that lists all State objects from the database hbtn_0e_6_usa"""
+"""script that prints the first State object from the database hbtn_0e_6_usa"""
 from model_state import Base, State
 from sys import argv
 from sqlalchemy import create_engine
@@ -13,6 +13,6 @@ if __name__ == '__main__':
     Base.metadata.create_all(bind=engine)
     session = Session(engine)
 
-    row = session.query(State).order_by(State.id)
-    print(row[0].id, end="")
-    print(": " + row[0].name)
+    row = session.query(State).first()
+    print(row.id, end="")
+    print(": " + row.name)
