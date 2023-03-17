@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script that lists all State objects that contain
-the letter a from the database hbtn_0e_6_usa"""
+"""script that prints the State object with the
+name passed as argument from the database hbtn_0e_6_usa"""
 from model_state import Base, State
 from sys import argv
 from sqlalchemy import create_engine
