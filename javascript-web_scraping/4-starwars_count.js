@@ -6,10 +6,10 @@ request(args[2], function (error, response, body) {
   if (error) {
     console.log(error);
   }
-  let count = 0;
   const movies = JSON.parse(body).results;
-  for (const mov in movies) {
-    for (const char in mov.characters) {
+  let count = 0;
+  for (const mov of movies) {
+    for (const char of mov.characters) {
       if (char.includes('18')) {
         count = count + 1;
       }
