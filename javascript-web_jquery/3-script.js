@@ -1,1 +1,3 @@
-$('header').addClass('red');
+$('header').click(function () {
+  $(this).addClass('red');
+});
